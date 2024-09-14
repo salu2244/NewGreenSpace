@@ -1,0 +1,502 @@
+<!-------------DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planting Guide</title>
+    <link rel="stylesheet" href="/css/EcoGuide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Green</a>
+        <ul class="navlist">
+            <li class="dropdown">
+                <a href="#" id="allSeasonsBtn">All Seasons</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" data-season="spring">Spring</a></li>
+                    <li><a href="#" data-season="summer">Summer</a></li>
+                    <li><a href="#" data-season="autumn">Autumn</a></li>
+                    <li><a href="#" data-season="winter">Winter</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="signin.html">Sign In / Sign Up</a></li>
+        </ul>
+        <div id="google_translate_element"></div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <main>
+        <section id="springSection" class="season-section">
+            <h2>Spring</h2>
+            <div class="plant">
+                <h3>Tomato</h3>
+                <p>Temperature: 15-20°C</p>
+                <p>Seeds: Available in garden stores</p>
+                <p>Space: Can be planted in pots or small garden beds</p>
+            </div>
+            <div class="plant">
+                <h3>Lettuce</h3>
+                <p>Temperature: 10-20°C</p>
+                <p>Seeds: Available online and in stores</p>
+                <p>Space: Requires very little space, suitable for small pots</p>
+            </div>
+        </section>
+        <section id="summerSection" class="season-section">
+            <h2>Summer</h2>
+            <div class="plant">
+                <h3>Cucumber</h3>
+                <p>Temperature: 20-30°C</p>
+                <p>Seeds: Can be found in most garden centers</p>
+                <p>Space: Needs climbing support, can be grown in small vertical spaces</p>
+            </div>
+            <div class="plant">
+                <h3>Basil</h3>
+                <p>Temperature: 20-25°C</p>
+                <p>Seeds: Available in garden stores and online</p>
+                <p>Space: Perfect for small pots and windowsills</p>
+            </div>
+        </section>
+        <section id="autumnSection" class="season-section">
+            <h2>Autumn</h2>
+            <div class="plant">
+                <h3>Spinach</h3>
+                <p>Temperature: 5-15°C</p>
+                <p>Seeds: Easily found in garden stores</p>
+                <p>Space: Ideal for small containers and garden beds</p>
+            </div>
+            <div class="plant">
+                <h3>Carrot</h3>
+                <p>Temperature: 10-20°C</p>
+                <p>Seeds: Available in most garden stores</p>
+                <p>Space: Can be grown in small garden beds or deep pots</p>
+            </div>
+        </section>
+        <section id="winterSection" class="season-section">
+            <h2>Winter</h2>
+            <div class="plant">
+                <h3>Kale</h3>
+                <p>Temperature: 0-10°C</p>
+                <p>Seeds: Available online and in garden stores</p>
+                <p>Space: Suitable for small pots and garden beds</p>
+            </div>
+            <div class="plant">
+                <h3>Garlic</h3>
+                <p>Temperature: -5-5°C</p>
+                <p>Seeds: Available in most garden centers</p>
+                <p>Space: Requires very little space, can be grown in pots</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Google Translate initialization script
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.season-section');
+            const dropdown = document.querySelector('.dropdown-content');
+            let allSeasonsVisible = false;
+
+            document.getElementById('allSeasonsBtn').addEventListener('click', function (event) {
+                event.preventDefault();
+                allSeasonsVisible = !allSeasonsVisible;
+                toggleAllSections(allSeasonsVisible);
+                dropdown.classList.toggle('show');
+            });
+
+            dropdown.addEventListener('click', function (event) {
+                if (event.target.tagName === 'A') {
+                    const season = event.target.getAttribute('data-season');
+                    if (season) {
+                        toggleSectionDisplay(`${season}Section`);
+                    }
+                    dropdown.classList.remove('show');
+                }
+            });
+
+            function toggleSectionDisplay(sectionId) {
+                sections.forEach(section => {
+                    section.style.display = section.id === sectionId ? 'block' : 'none';
+                });
+            }
+
+            function toggleAllSections(show) {
+                sections.forEach(section => {
+                    section.style.display = show ? 'block' : 'none';
+                });
+            }
+
+            // Initially show all sections
+            toggleAllSections(true);
+        });
+    </script>
+</body>
+</html------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGuide</title>
+    <link rel="stylesheet" href="/css/EcoGuide.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body><br>
+     <!--==================== HEADER ====================-->
+     <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i>Greenspace
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="/" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/about" class="nav__link">AboutUs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/ecoguide" class="nav__link">EcoGuide</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/gallery" class="nav__link">Gallery</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/contact" class="nav__link">Contact Us</a>
+                        </li>
+                        <div class="nav-item" >
+                            <a href="/maincart" class="nav__link">
+                                <i class="ri-shopping-cart-2-line"></i>
+                            </a>
+                            
+                        </div>
+                        <div class="nav-item" >
+                            <a href="/signin" class="nav__link">
+                                <i class="ri-account-circle-line"></i> 
+                            </a>
+                            
+                        </div>
+                    </ul>
+                    
+    
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+              
+                
+
+                <div class="nav__btns">
+                  
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <div class="main">
+        <!--header id="header" class="header">
+            <div class="container">
+                <a href="#" class="logo">
+                  <img src="" alt="Logo GreenSpace" />
+                </a>
+        
+                <nav id="nav-menu" class="nav-menu">
+                  <ul class="nav-list">
+                    <li class="nav-item">
+                      <a href="" class="nav-link active-link">Home</a>
+                    </li>
+        
+                    <li class="nav-item">
+                      <a href="#about" class="nav-link">About</a>
+                    </li>
+        
+                    <li class="nav-item">
+                      <a href="#EcoGuide" class="nav-link">EcoGuide</a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a href="#Gallery" class="nav-link">Gallery</a>
+                      </li>
+        
+                    <li class="nav-item">
+                      <a href="#contact us" class="nav-link">Contact</a>
+                    </li>
+                  </ul>
+        
+                  <!-- Close Button>
+                  <div id="button-close" class="button-close">
+                    <i class="ri-close-line"></i>
+                  </div>
+                </nav>
+        
+                <!-- Toggle Button >
+                <div id="button-toggle" class="button-toggle">
+                  <i class="ri-apps-2-line"></i>
+                </div>
+        
+                <!-- Single Theme Toggle Button >
+              <div id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i> <!-- Default icon (moon for dark mode) >
+              </div>
+        
+              
+              </div>
+            </div><br><br><br><br><br><br>
+            <div class="center-content">
+                <h1>How to plant in limited space in current times</h1>
+                <p>
+                    In the current times, optimizing plant placement in limited spaces requires selecting compact, low-maintenance plants that thrive in small areas. Utilizing vertical gardening techniques, such as wall-mounted planters and vertical racks, can maximize space efficiency. Additionally, incorporating modular planters and hanging pots helps in utilizing available vertical space and avoiding clutter. Choosing plants with similar light and water requirements ensures easier care and maintenance, while integrating space-saving solutions like trellises and plant shelves can further enhance the greenery without overwhelming the area.
+                </p>
+                <button class="btn">Read more!</button>
+            </div>
+            <div class="bottom-content">
+                <!--p>This plant is - <u>Monstera</u></p>
+            </div>
+        </header-->
+
+        <section>
+            <div class="take-care">
+                <img src="https://i.pinimg.com/474x/95/7e/f7/957ef74ed8be23135218bc24d6ed4071.jpg" alt="" width="300px">
+                <div class="description">
+                    <h1>Learn how we take care of our plants</h1>
+                    <p>At GreenSpace, we meticulously care for our plants by adhering to a structured regimen that ensures their optimal growth and health. Our care routine includes providing the right amount of water, ensuring proper drainage, and offering adequate sunlight based on each plant’s specific needs. We regularly monitor soil conditions and use organic fertilizers to nourish the plants. Additionally, we implement pest control measures and prune the plants as needed to encourage healthy growth and prevent disease. Our commitment to these practices ensures that each plant thrives and contributes to a vibrant and sustainable green space.</p>
+                    <button class="btn">LEARN MORE</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="vine-tree">
+                <div class="right-side-text">
+                    <h1>Higher classification</h1>
+                    <p>Marigolds are commonly referred to as members of the Tagetes genus, and there are several species within this genus, such as Tagetes erecta (African marigold) and Tagetes patula (French marigold).</p>
+                </div>
+                <div class="center">
+                    <img src="https://i.pinimg.com/564x/f0/47/e0/f047e0d22d54e6b2dc0c53f913eba927.jpg" alt="" width="300px">
+                </div>
+                <div class="left-side-text">
+                    <h1>A young Marigold plant </h1>
+                    <p>Marigold plants offer natural pest control, enhance garden beauty, and have medicinal properties.</p>
+                    <a href="https://www.almanac.com/plant/marigolds" target="_blank">
+                        <button class="btn">Explore New Arrival</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="choose-our-plants">
+                <div class="title">
+                    <h1>Choose our best plants</h1>
+                    <button class="view-all"> <a href="">view all</a>  <img src="https://www.svgrepo.com/show/513809/arrow-right.svg" alt="" width="20px"></button>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Spring Plants</a></li>
+                        <li><a href="#">Summer Plants</a></li>
+                        <li><a href="#">Monsoon Plants</a></li>
+                        <li><a href="#">Autumn Plants</a></li>
+                        <li><a href="#">Pre-winter Plants</a></li>
+                        <li><a href="#">Winter Plants</a></li>
+                    </ul>
+                </div>
+                <div class="shop-advice">
+                    <div class="plant-for-sale">
+                        <img src="https://i.pinimg.com/564x/2f/3b/4f/2f3b4f0579f7327177533bcce53c4b6b.jpg" alt="" width="280px" height="400px">
+                        <div class="description">
+                            <h1><a href="">Gerbera plants</a> </h1>
+                            <h1>₹350.00</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="plant-for-sale">
+                        <img src="https://i.pinimg.com/564x/b5/67/9f/b5679f74be3c2b426120cb0319b7846a.jpg" alt="" width="280px" height="400px">
+                        <div class="description">
+                            <h1><a href="">Rose Plant</a> </h1>
+                            <h1>₹240.00</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="plant-for-sale">
+                        <img src="https://i.pinimg.com/564x/94/8f/d7/948fd73c3e97ec5bb4822e02fae50bc5.jpg" alt="" width="280px" height="400px">
+                        <div class="description">
+                            <h1><a href=""> Shrubby Plants</a> </h1>
+                            <h1>₹190.00</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="plant-for-sale">
+                        <img src="https://i.pinimg.com/236x/84/4e/10/844e10182f3414f4416cab94b1b5378b.jpg" alt="" width="280px" height="400px">
+                        <div class="description">
+                            <h1><a href="">Dahlia Plant</a></h1>
+                            <h1>₹450.00</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section>
+            <div class="house-plants">
+                <div class="top-content">
+                    <h1 class="title">House plants</h1>
+                    <img class="image-of-top-content" src="https://i.pinimg.com/564x/09/80/cc/0980cced285d7729184198b34a9d5908.jpg" alt="" width="300px" height="300px">
+                    <p class="description-top-content-first">Houseplants, also known as indoor plants, are plants that are grown indoors in places such as homes and offices.</p>
+                    <p class="description-top-content-second">They are primarily grown for decorative purposes but also offer several benefits, including improving air quality, boosting mood, and adding life to indoor spaces.</p>
+                </div>
+                <div class="bottom-content">
+                    <div class="image-offer">
+                        <img src="https://i.pinimg.com/236x/e3/5e/da/e35eda1b6ad5148cb6d217a249b946dd.jpg" alt="" width="300px">
+                    </div>
+                    <div class="offer">
+                        <div class="top-offer">
+                            <img src="https://i.pinimg.com/236x/29/f4/36/29f436516fe84bcd7af9f907f171bd14.jpg" alt="" width="150px" height="200px">
+                            
+                            <img src="https://i.pinimg.com/236x/e5/15/fe/e515fe202ea02a5359f271665f4628ee.jpg" alt="" width="150px" height="200px">
+                        </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+                        <div class="text-of-offer">
+                            <div class="text">
+                                <h1>Offer</h1>
+                                <p><span style="font-weight: bold;">Indoor plants</span> offer aesthetic appeal, air purification, and stress reduction, while <span style="font-weight: bold;">outdoor plants</span> enhance landscaping, provide natural shade, and support local wildlife.</p>
+
+                            </div>
+                            <button class="btn">Shop now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!----section>
+            <div class="join-to-community">
+                <h1 class="title">Join our plant lover Community</h1>
+                <div class="description-for-join">
+                    <div class="left">
+                        <h1 class="title">Over 80K+ People joined our community</h1>
+                        <div class="bottom">
+                            <img src="https://img.freepik.com/free-photo/birds-nest-fern-plant-terracotta-pot-home-decor-object_53876-133133.jpg?size=626&ext=jpg&ga=GA1.1.121367624.1667321139" alt="" width="250px">
+                            <div class="join-now">
+                                <p class="text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nulla facilisi morbi.Amet nulla facilisi morbi.</p>
+                                <button class="btn">join now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="https://img.freepik.com/free-photo/ruffled-leaf-palm-white-pot_53876-146305.jpg?size=626&ext=jpg&ga=GA1.1.121367624.1667321139" alt="" width="350px">
+                    </div>
+                </div>
+            </div>
+        </section----------------->
+
+        <!-- ============================== FOOTER =============================== -->
+    
+    <footer id="footer" class="footer">
+        <div class="container flex-row">
+            <div class="footer-left">
+                <!--a href="#" class="footer-logo"></a---->
+                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Green</span>Space</h1>
+                <p class="footer-tagline">
+                  "Gardening fosters a healthier planet through sustainable practices and green spaces, inspiring a global movement for a greener future." <br />
+                  One Garden at a Time.
+                </p>
+            </div>
+    
+            <div class="footer-content">
+                <section>
+                    <h3 class="footer-title">Get In Touch</h3>
+                    <ul class="footer-list">
+                        <li class="footer-information">
+                            NSTI(W)Kolkata <br>
+                            Saltlake sector V, West Bengal.<br>
+                            912356421536<br>
+                            greenspace24@gmail.com
+                        </li><br>
+                        <ul class="footer-social">
+                <a
+                  href="https://www.facebook.com/"
+                  class="footer-social-link"
+                  target="_blank"
+                >
+                  <i class="ri-facebook-circle-fill"></i>
+                </a>
+  
+                <a
+                  href="https://www.instagram.com/"
+                  class="footer-social-link"
+                  target="_blank"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
+  
+                <a
+                  href="https://www.twitter.com/"
+                  class="footer-social-link"
+                  target="_blank"
+                >
+                  <i class="ri-twitter-fill"></i>
+                </a>
+              </ul>
+                    </ul>
+                </section>
+    
+                <section>
+                    <h3 class="footer-title">Popular Links</h3>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a><br>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a><br>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gallery</a><br>
+                    <a class="text-white mb-2" href="EcoGuide.html"><i class="fa fa-angle-right mr-2"></i>Eco Guide</a><br>
+                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a><br>
+                </section>
+    
+                <section>
+                    <h3 class="footer-title">Newsletter</h3>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        </div>
+                        <div>
+                            <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <div class="footer-copy container">
+            &#169; GreenSpace by Byte Builders, NSTI(W) Kolkata. All rights reserved.
+        </div>
+    </footer>
+      
+    
+    <!-- ============================== SCROLL UP ============================ -->
+    <a href="#" id="scroll-up" class="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+      </a>
+  
+      <!-- ============================== MAIN JS ============================== -->
+      <script src="/js/index.js"></script>
+    
+</body>
+</html>

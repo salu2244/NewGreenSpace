@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GreenSpace2 Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/greencart.css" type="text/css"/>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Inventory Details</h2>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.productName}">Product Name</td>
+                <td th:text="${item.category}">Category</td>
+                <td th:text="${item.quantity}">Quantity</td>
+                <td th:text="${item.price}">Price</td>
+                <td>
+                    <a th:href="@{/cart/delete/{id}(id=${item.id})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Inventory List</h2>
+        <ul id="inventoryList" class="list-group">
+            <!-- Inventory items will be populated here -->
+        </ul>
+
+        <form th:action="@{/cart/add}" method="post">
+            <div class="form-group">
+                <label>Category</label>
+                <select name="category" id="categorySelect" class="form-control" required>
+                    <option value="seeds">Seeds</option>
+                    <option value="flower">Flower</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="tools">Tools</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Product Name</label>
+                <select name="productName" id="productNameSelect" class="form-control" required>
+                    <option value="">Select a product</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" required min="1">
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" id="price" name="price" class="form-control" readonly required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+    </div>
+
+    <script>
+        // Object to store product options and their prices for each category
+        const productOptions = {
+            seeds: {
+                "Wheat": 100,
+                "Rice": 120,
+                "Corn": 90,
+                "Barley": 110
+            },
+            flower: {
+                "Rose": 150,
+                "Marigold": 80,
+                "Lily": 130,
+                "Sunflower": 140
+            },
+            vegetables: {
+                "Potato": 50,
+                "Tomato": 60,
+                "Onion": 70,
+                "Cabbage": 40
+            },
+            tools: {
+                "Shovel": 300,
+                "Rake": 250,
+                "Hoe": 200,
+                "Trowel": 150
+            }
+        };
+
+        // Function to update the product options based on the selected category
+        function updateProductOptions() {
+            const category = document.getElementById('categorySelect').value;
+            const productNameSelect = document.getElementById('productNameSelect');
+            const priceInput = document.getElementById('price');
+
+            // Clear previous product options
+            productNameSelect.innerHTML = '<option value="">Select a product</option>';
+
+            console.log(`Selected category: ${category}`); // Debugging statement
+
+            if (category in productOptions) {
+                console.log(`Products for ${category}:`, productOptions[category]); // Debugging statement
+
+                Object.keys(productOptions[category]).forEach(function(product) {
+                    const option = document.createElement('option');
+                    option.value = product;
+                    option.textContent = product;
+                    productNameSelect.appendChild(option);
+                });
+
+                // Reset price field
+                priceInput.value = '';
+            } else {
+                console.warn(`Category ${category} not found in productOptions`); // Debugging statement
+            }
+
+            // Update the inventory list
+            updateInventoryList();
+        }
+
+        // Function to update the inventory list based on the selected category
+        function updateInventoryList() {
+            const category = document.getElementById('categorySelect').value;
+            const inventoryList = document.getElementById('inventoryList');
+            inventoryList.innerHTML = ''; // Clear previous inventory list
+
+            if (category in productOptions) {
+                Object.keys(productOptions[category]).forEach(function(product) {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item';
+                    listItem.textContent = `${product} - ₹${productOptions[category][product]}`;
+                    inventoryList.appendChild(listItem);
+                });
+            } else {
+                console.warn(`Category ${category} not found in productOptions`); // Debugging statement
+            }
+        }
+
+        // Listen to category selection and update product names and inventory list accordingly
+        document.getElementById('categorySelect').addEventListener('change', function() {
+            updateProductOptions();
+        });
+
+        // Handle price fetch and total price calculation based on product name and quantity
+        document.getElementById('productNameSelect').addEventListener('change', function() {
+            updatePrice();
+        });
+
+        document.getElementById('quantity').addEventListener('input', function() {
+            updatePrice();
+        });
+
+        function updatePrice() {
+            const category = document.getElementById('categorySelect').value;
+            const itemName = document.getElementById('productNameSelect').value;
+            const quantity = document.getElementById('quantity').value;
+            const priceInput = document.getElementById('price');
+
+            console.log(`Category: ${category}, Item: ${itemName}, Quantity: ${quantity}`); // Debugging statement
+
+            if (itemName.trim() !== '' && category in productOptions) {
+                const pricePerItem = productOptions[category][itemName] || 0;
+                const totalPrice = pricePerItem * (quantity || 1);
+                priceInput.value = totalPrice;
+            } else {
+                priceInput.value = 0;
+            }
+        }
+    </script>
+</body>
+</html>

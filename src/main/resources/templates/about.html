@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <!-- ============================== FAVICON ============================== -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+    <!-- ============================== REMIXICONS =========================== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ============================== CSS ================================== -->
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+  </head>
+  <body>
+    <!-- ============================== HEADER & NAV ========================= -->
+     
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i>Greenspace
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="/" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/about" class="nav__link">AboutUs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/ecoguide" class="nav__link">EcoGuide</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/gallery" class="nav__link">Gallery</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/contact" class="nav__link">Contact Us</a>
+                        </li>
+                        <div class="nav-item" >
+                            <a href="/maincart" class="nav__link">
+                                <i class="ri-shopping-cart-2-line"></i>
+                            </a>
+                            
+                        </div>
+                        <div class="nav-item" >
+                            <a href="/signin" class="nav__link">
+                                <i class="ri-account-circle-line"></i> 
+                            </a>
+                            
+                        </div>
+                    </ul>
+                    
+    
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+              
+                
+
+                <div class="nav__btns">
+                  
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <!-- ============================== MAIN ================================= -->
+    <main id="main" class="main">
+      <!-- ============================ Content ============================ -->
+      <div id="content" class="content">
+        <!-- ========================== Home ============================= -->
+        <article id="home" class="home article">
+          <div class="container flex-row">
+            <div class="home-data">
+              <h1 class="home-title">
+                "Greening Your Home, Naturally" <span>GreenSpace</span>
+              </h1>
+
+              <p class="home-description"><j>
+                Small-space gardening is a viable option for those with limited space. Techniques such as container gardening, vertical gardening, and utilizing windowsills or balconies can maximize available space. These methods allow for the cultivation of a variety of plants, from herbs and vegetables to flowers. Small-space gardening brings nature closer to urban environments and makes fresh, home-grown produce accessible to everyone.</j>
+              </p>
+
+              <a href="#about" class="button">
+                Benefits
+                <i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+            </div>
+
+            <img src="/img/treehouse.jpg" alt="Home Image" class="home-img" />
+          </div>
+        </article>
+        <!-- ========================== About ============================ -->
+        <article id="about" class="about article container flex-row">
+          <div class="about-data">
+            <span class="article-subtitle">Green Excellence</span>
+            <h2 class="article-title">
+                "Benefits" <br />
+              
+            </h2>
+
+            <p class="about-description">
+              For those with limited space, small-space gardening is a viable option. Techniques such as container gardening, vertical gardening, and utilizing windowsills or balconies can maximize available space. These methods allow for the cultivation of a variety of plants, from herbs and vegetables to flowers, bringing nature closer to urban environments and making fresh, home-grown produce accessible to everyone. Small-space gardening not only enhances the aesthetic appeal of living spaces but also fosters a connection with nature and encourages sustainable living practices.
+            </p><br>
+            <a href="#services" class="button">
+                Ideas
+                <i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+          </div>
+
+          <img src="/img/about.png" alt="About Image" class="about-img" />
+        </article>
+        <!-- ========================== Services ========================= -->
+        <article id="services" class="services article">
+          <span class="article-subtitle">
+            -Gardening in menimum space.
+          </span>
+          <h2 class="article-title">Garden Idea for Your Gardening</h2>
+
+          <div class="container flex-row">
+            <section class="services-card">
+              <img
+                src="/img/service1.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Efficient Plant Cleanup</h3>
+              <p class="services-description">
+                Our team ensures a tidy garden through efficient flat raking and
+                thorough plant cleanup.
+              </p>
+            </section>
+
+            <section class="services-card">
+              <img
+                src="/img/service2.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Precise Tree Trimming</h3>
+              <p class="services-description">
+                We offer skilled tree trimming using expert pruning shears,
+                ensuring healthy and well-shaped trees.
+              </p>
+            </section>
+
+            <section class="services-card">
+              <img
+                src="/img/service3.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Nurturing Trees with Care</h3>
+              <p class="services-description">
+                We provide expert tree watering and comprehensive care for
+                healthy and thriving trees.
+              </p>
+            </section>
+
+            <section class="services-card">
+              <img
+                src="/img/service4.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Root Removal and Harvest</h3>
+              <p class="services-description">
+                Our team efficiently removes roots and ensures a bountiful
+                harvest of carrots and other root vegetables.
+              </p>
+            </section>
+
+            <section class="services-card">
+              <img
+                src="/img/service5.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Seed Planting and Care</h3>
+              <p class="services-description">
+                We specialize in planting seeds and caring for seedlings,
+                ensuring the healthy growth of new plants.
+              </p>
+            </section>
+
+            <section class="services-card">
+              <img
+                src="/img/service6.png"
+                alt="Services Image"
+                class="services-img"
+              />
+
+              <h3 class="services-name">Garden Cart Rental</h3>
+              <p class="services-description">
+                Rent our garden carts and tools for your outdoor projects,
+                making your gardening tasks more convenient.
+              </p>
+            </section>
+          </div>
+          
+        </article>
+        <!-- ========================== Contact Us ======================= -->
+        <!---<article id="contact" class="contact article container flex-row">
+          <div class="contact-data">
+            <span class="article-subtitle">-About Your Expirence</span>
+            <h2 class="article-title contact-title">
+              Tell us about Your Gardening
+            </h2>
+          </div>
+
+          <form action="" class="contact-form">
+            <div class="contact-inputs">
+              <div class="contact-content">
+                <input
+                  type="text"
+                  id="name"
+                  class="contact-input"
+                  autocomplete="off"
+                  placeholder=" "
+                />
+                <label for="name" class="contact-label">Name</label>
+              </div>
+
+              <div class="contact-content">
+                <input
+                  type="email"
+                  id="email"
+                  class="contact-input"
+                  autocomplete="off"
+                  placeholder=" "
+                />
+                <label for="email" class="contact-label">Email</label>
+              </div>
+
+              <div class="contact-content">
+                <input
+                  type="text"
+                  id="subject"
+                  class="contact-input"
+                  autocomplete="off"
+                  placeholder=" "
+                />
+                <label for="subject" class="contact-label">Subject</label>
+              </div>
+
+              <div class="contact-content contact-area">
+                <textarea
+                  name="message"
+                  id="message"
+                  class="contact-input"
+                  autocomplete="off"
+                  placeholder=" "
+                ></textarea>
+                <label for="message" class="contact-label">Message</label>
+              </div>
+            </div>
+
+            <button class="button">
+              Send Message
+              <i class="ri-arrow-right-up-line button-icon"></i>
+            </button>
+          </form>
+        </article>
+      </div------->
+
+      <!-- ============================ Aside ============================== -->
+      <!---aside id="aside" class="aside"--->
+        <!-- ========================== Testimonials ===================== -->
+        <article id="testi" class="testi container">
+          <span class="article-subtitle">
+            -Meet our Team....
+          </span>
+
+          <div class="testi-content flex-row">
+            <div class="testi-card">
+              <div class="testi-circle">
+                <div class="testi-subcircle">01</div>
+                <img
+                  src="/img/Shikha2.png"
+                  alt="Testimonial Image"
+                  class="testi-image"
+                />
+              </div>
+
+              <blockquote class="testi-msg">
+                "Work on Frontend part"
+                <br />
+                <cite class="testi-name">- Shikha Kumari</cite>
+              </blockquote>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-circle">
+                <div class="testi-subcircle">02</div>
+                <img
+                  src="/img/Srimana2.png"
+                  alt="Testimonial Image"
+                  class="testi-image"
+                />
+              </div>
+
+              <blockquote class="testi-msg">
+                "Work on Backend part"
+                <br />
+                <cite class="testi-name">- Srimana Maity</cite>
+              </blockquote>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-circle">
+                <div class="testi-subcircle">03</div>
+                <img
+                  src="/img/Susma2.png"
+                  alt="Testimonial Image"
+                  class="testi-image"
+                />
+              </div>
+
+              <blockquote class="testi-msg">
+                "Work on Frontend part"
+                <br />
+                <cite class="testi-name">- Susma Kumari Singh</cite>
+              </blockquote>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </main>
+
+    <!-- ============================== FOOTER =============================== -->
+    
+    <footer id="footer" class="footer">
+      <div class="container flex-row">
+          <div class="footer-left">
+              <!--a href="#" class="footer-logo"></a---->
+              <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Green</span>Space</h1>
+              <p class="footer-tagline">
+                "Gardening fosters a healthier planet through sustainable practices and green spaces, inspiring a global movement for a greener future." <br />
+                One Garden at a Time.
+              </p>
+          </div>
+  
+          <div class="footer-content">
+              <section>
+                  <h3 class="footer-title">Get In Touch</h3>
+                  <ul class="footer-list">
+                      <li class="footer-information">
+                          NSTI(W)Kolkata <br>
+                          Saltlake sector V, West Bengal.<br>
+                          912356421536<br>
+                          greenspace24@gmail.com
+                      </li><br>
+                      <ul class="footer-social">
+              <a
+                href="https://www.facebook.com/"
+                class="footer-social-link"
+                target="_blank"
+              >
+                <i class="ri-facebook-circle-fill"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/"
+                class="footer-social-link"
+                target="_blank"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+
+              <a
+                href="https://www.twitter.com/"
+                class="footer-social-link"
+                target="_blank"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+            </ul>
+                  </ul>
+              </section>
+  
+              <section>
+                  <h3 class="footer-title">Popular Links</h3>
+                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a><br>
+                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a><br>
+                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gallery</a><br>
+                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Eco Guide</a><br>
+                  <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a><br>
+              </section>
+  
+              <section>
+                  <h3 class="footer-title">Newsletter</h3>
+                  <form action="">
+                      <div class="form-group">
+                          <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                      </div>
+                      <div class="form-group">
+                          <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                      </div>
+                      <div>
+                          <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                      </div>
+                  </form>
+              </section>
+          </div>
+      </div>
+      <div class="footer-copy container">
+          &#169; GreenSpace by Byte Builders, NSTI(W) Kolkata. All rights reserved.
+      </div>
+  </footer>
+    
+
+
+    <!-- ============================== SCROLL UP ============================ -->
+    <a href="#" id="scroll-up" class="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!-- ============================== MAIN JS ============================== -->
+    <script src="/js/about.js"></script>
+  </body>
+</html>
+
+
+
+

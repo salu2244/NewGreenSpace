@@ -1,0 +1,1064 @@
+/* ============================== GOOGLE FONTS ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500&family=Raleway:wght@500;600&display=swap");
+
+/* ============================== CSS VARIABLES ======================== */
+:root {
+  --header-height: 5rem;
+
+  /* Colors */
+  --first-color: #51724c;
+  --first-color-alt: #435f3f;
+  --title-color: #4a941e;
+  --text-color: #55724b;
+  --text-color-light: #9dc18b;
+  --body-color: #fff;
+  --container-color: #dadfc0;
+
+  /* Font and Typography */
+  --body-font: "Poppins", sans-serif;
+  --title-font: "Raleway", sans-serif;
+  --subtitle-font: "Dancing Script", cursive;
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /* Font Weight */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* Z-Index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* ============================== CSS RESET ============================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================== REUSABLE CSS CLASSES ================= */
+.container {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.flex-column,
+.flex-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.article,
+.aside,
+.footer {
+  padding-block: 8rem 2rem;
+}
+
+.article-title {
+  font-family: var(--title-font);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1.5rem;
+}
+
+.article-subtitle {
+  display: block;
+  font-family: var(--subtitle-font);
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-bottom: 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--first-color);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: var(--font-medium);
+  transition: background 0.3s;
+}
+
+.button i {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.button:hover i {
+  transform: translateX(0.25rem);
+}
+
+/* ============================== HEADER & NAV ========================= */
+/*.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: box-shadow 0.3s;
+}
+
+.header .container {
+  height: var(--header-height);
+  display: flex;
+  column-gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo img {
+  width: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  margin-left: auto;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.nav-link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: hsl(98, 66%, 43%);
+}
+
+.button-close,
+.button-toggle {
+  display: none;
+}
+
+Active Link 
+.active-link {
+  color: hsl(98, 66%, 43%);
+}
+
+ Change Background Header
+.bg-header {
+  box-shadow: 0 1px 5px rgba(37, 40, 38, 0.1);
+}*/
+
+/* ============================== HOME ================================= */
+.home .container {
+  position: relative;
+  padding-block: 3rem;
+  height: 420px;
+}
+
+.home-data {
+  z-index: 1;
+  width: 500px;
+  column-gap: 7rem;
+}
+
+.home-title {
+  font-size: 40px;
+  font-family: var(--title-font);
+  margin-bottom: 1rem;
+}
+
+.home-title span {
+  color: #3f503a;
+}
+
+.home-description {
+  padding-inline-end: 3.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 170%;
+  text-align: justify;
+  
+}
+
+.home-img {
+  width: 570px;
+  position: absolute;
+  right: -5rem;
+  top: 3rem;
+}
+
+/* ============================== ABOUT ================================ */
+.about.container {
+  column-gap: 7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-data {
+  order: 1;
+}
+
+.about-description {
+  line-height: 170%;
+  text-align: justify;
+}
+
+.about-img {
+  width: 470px;
+}
+
+/* ============================== SERVICES ============================= */
+.services .article-subtitle,
+.services .article-title {
+  text-align: center;
+}
+
+.services .container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 17rem 3rem;
+  padding-block: 16rem 4rem;
+}
+
+.services-card {
+  width: 30%;
+  height: 200px;
+  position: relative;
+  background-color: #ecfee7;
+  padding: 4rem 1.5rem 2rem;
+  box-shadow: 0 5px 20px hsl(108, 100%, 99%);
+  border-radius: 1.5rem;
+}
+
+.services-img {
+  width: 230px;
+  position: absolute;
+  inset: 0;
+  top: -12rem;
+  margin: 0 auto;
+  transition: transform 0.4s;
+}
+
+.services-card:hover .services-img {
+  transform: translateY(-0.25rem);
+}
+
+.services-name {
+  font-size: var(--h3-font-size);
+  font-family: var(--title-font);
+  margin-bottom: 1rem;
+}
+
+.services-description {
+  display: block;
+  font-size: var(--small-font-size);
+  line-height: 170%;
+  text-align: justify;
+}
+
+/* ============================== CONTACT ============================== */
+.contact.container {
+  column-gap: 4rem;
+  justify-content: space-between;
+  padding-top: 10rem;
+}
+
+.contact-data {
+  width: 40%;
+}
+
+.contact-form {
+  width: 60%;
+}
+
+.contact-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-content {
+  position: relative;
+  height: 3rem;
+  border-bottom: 1px solid var(--text-color-light);
+}
+
+.contact-content:nth-child(1),
+.contact-content:nth-child(2) {
+  width: 45%;
+}
+
+.contact-content:nth-child(3),
+.contact-content:nth-child(4) {
+  width: 100%;
+}
+
+.contact-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: none;
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.contact-label {
+  position: absolute;
+  top: 0.75rem;
+  width: 100%;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.contact-area {
+  height: 7rem;
+}
+
+.contact-area textarea {
+  resize: none;
+}
+
+/* Input Focus Move Up Label */
+.contact-input:focus + .contact-label {
+  top: -0.75rem;
+  left: 0;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  z-index: 10;
+}
+
+/* Input Focus Sticky Top Label */
+.contact-input:not(:placeholder-shown).contact-input:not(:focus)
+  + .contact-label {
+  top: -0.75rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  z-index: 10;
+}
+
+/* ============================== TESTIMONIALS ========================= */
+.testi.container {
+  padding: 2.5rem 1.5rem;
+  background-color: var(--first-color);
+  border-radius: 4.5rem;
+}
+
+.testi .article-subtitle,
+.testi-msg,
+.testi-name {
+  color: #fff;
+}
+
+.testi-content {
+  position: relative;
+  column-gap: 4rem;
+  padding-top: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi-card {
+  width: 272px;
+  z-index: var(--z-tooltip);
+}
+
+.testi-circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background-color: hsla(107, 100%, 96%, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+}
+
+.testi-subcircle {
+  width: 50px;
+  height: 50px;
+  top: -1.25rem;
+  outline: 10px solid var(--first-color);
+  background-color: #ecfee7;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+}
+
+.testi-image {
+  width: 100px;
+}
+
+.testi-msg {
+  text-align: center;
+  font-size: var(--small-font-size);
+  line-height: 170%;
+}
+
+.testi-name {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+/* ============================== FOOTER =============================== */
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Ensures all elements align to the top */
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; /* Limits width to prevent overflow */
+  text-justify: auto;
+}
+
+.footer-content {
+  display: flex;
+  gap: 4rem; /* Space between columns */
+  flex-wrap: wrap; /* Ensures wrapping for responsiveness */
+}
+
+/*.footer-logo img {
+  width: 70px;
+  margin-bottom: 0.5rem;
+}*/
+
+.footer-tagline,
+.footer-title,
+.footer-information {
+  font-size: var(--normal-font-size);
+  text-align: justify;
+}
+
+.footer-content section {
+  width: max-content;
+}
+
+.footer-title {
+  margin-bottom: 1.5rem;
+}
+
+.footer-list {
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.footer-social {
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.footer-social-link {
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: color 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.footer-social-link:hover {
+  color: var(--first-color-alt);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  margin-top: 7.5rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  width: 100%; /* Ensures full width */
+}
+
+.footer .container > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+/* ============================== SCROLL BAR =========================== */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: #c3d6bd;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #a7c39d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8bb07d;
+}
+
+/* ============================== SCROLL UP ============================ */
+.scroll-up {
+  position: fixed;
+  right: 3rem;
+  bottom: -50%;
+  background-color: #8bb07d;
+  display: inline-flex;
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  color: #fff;
+  z-index: var(--z-tooltip);
+  transition: bottom 0.3s, transform 0.3s, background 0.4s;
+}
+
+.scroll-up:hover {
+  transform: translateY(-0.25rem);
+  background-color: var(--first-color);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+
+/*------------------------------*/
+
+/* theme.css */
+
+/* Light Mode */
+body.light-mode {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* Apply the theme variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header,
+.nav-menu,
+.footer,
+.scrollup {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.button,
+.contact-button {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem; /*56px*/
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 152;
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .4s; /*For animation dark mode*/
+}
+
+/*=============== BUTTONS ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #FFF;
+  padding: 1rem 1.75rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button__icon{
+  transition: .3s;
+}
+
+.button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.button--link{
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --first-color-dark: hsl(var(--hue), 8%, 20%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 75%);
+  --body-color: hsl(var(--hue), 8%, 12%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  color: var(--title-color);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.nav-item a i{
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  color: var(--title-color);
+}
+
+.nav__btns{
+  display: flex;
+  column-gap: 1rem;
+}
+
+.nav__btns i{
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+
+}
+
+/*========== 
+Color changes in some parts of 
+the website, in dark theme 
+==========*/
+
+.dark-theme .steps__bg,
+.dark-theme .questions{
+  background-color: var(--first-color-dark);
+}
+
+.dark-theme .product__circle,
+.dark-theme .footer__subscribe{
+  background-color: var(--container-color);
+}
+
+.dark-theme .scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, .3);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.container{
+  max-width: 968px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid{
+  display: grid;
+}
+
+.main{
+  overflow: hidden; /*For animation*/
+}
+
+/*=============== HEADER ===============*/
+.header{
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: .4s; /*For animation dark mode*/
+}
+
+/*=============== NAV ===============*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close{
+  color: var(--title-color);
+}
+
+.nav__logo{
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: .3s;
+}
+
+.nav__logo-icon{
+  font-size: 1.15rem;
+  color: var(--first-color);
+}
+
+.nav__logo:hover{
+  color: var(--first-color);
+}
+
+.nav__toggle{
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px){
+  .nav__menu{
+    position: fixed;
+    background-color: var(--container-color);
+    width: 80%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+    padding: 4rem 0 0 3rem;
+    border-radius: 1rem 0 0 1rem;
+    transition: .3s;
+    z-index: var(--z-fixed);
+  }
+}
+
+.nav__close{
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--first-color);
+}
+
+/* Show menu */
+.show-menu{
+  right: 0;
+}
+
+/* Change background header */
+.scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, .1);
+}
+
+/* Active link */
+.active-link{
+  position: relative;
+  color: var(--first-color);
+}
+
+.active-link::after{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: var(--first-color);
+}
+
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  background-color: var(--first-color);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+}
+
+.scrollup__icon{
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.scrollup:hover{
+  background-color: var(--first-color-alt);
+  opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+  bottom: 3rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background: hsl(var(--hue), 4%, 53%);
+}
+
+::-webkit-scrollbar-thumb{
+  background: hsl(var(--hue), 4%, 29%);
+  border-radius: .5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
+@media screen and (min-width: 767px){
+  body{
+    margin: 0;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 3rem;
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__menu{
+    margin-left: auto;
+  }
+
+
+}
+
+/* For large devices */
+@media screen and (min-width: 992px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+  .scrollup{
+    right: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* CSS VARIABLES */
+  /* Responsive Typography */
+  :root {
+      --big-font-size: 2rem;
+      --h1-font-size: 1.5rem;
+      --h2-font-size: 1.25rem;
+      --h3-font-size: 1rem;
+      --normal-font-size: 0.938rem;
+      --small-font-size: 0.813rem;
+      --smaller-font-size: 0.75rem;
+  }
+
+  /* SCROLL UP */
+  .scroll-up {
+      bottom: -50%;
+  }
+}
+
